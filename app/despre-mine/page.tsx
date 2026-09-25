@@ -1,11 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import styles from "./page.module.css";
 
-export const metadata = {
-  title: "Despre mine | Rareș Photographer",
+export const metadata: Metadata = {
+  title: "Despre mine",
   description:
     "Povestea lui Rareș Pușcașu și parcursul său în fotografie, de la primele cadre realizate cu telefonul până la fotografie de eveniment, portret, automotive, comercială și travel.",
+  alternates: {
+    canonical: "/despre-mine",
+  },
 };
 
 export default function AboutPage() {
@@ -83,10 +87,14 @@ export default function AboutPage() {
       </section>
 
       <section className={styles.highlight}>
-        <div className={styles.highlightNumber}>02</div>
+        <div className={styles.highlightNumber}>
+          02
+        </div>
 
         <div className={styles.highlightContent}>
-          <p className={styles.smallLabel}>PRIMA CAMERĂ</p>
+          <p className={styles.smallLabel}>
+            PRIMA CAMERĂ
+          </p>
 
           <h2>
             Nikon
@@ -214,9 +222,13 @@ export default function AboutPage() {
           <span>PHOTOGRAPHER</span>
         </div>
 
-        <p>© 2026 RAREȘ PUȘCAȘU</p>
+        <p>
+          © 2026 RAREȘ PUȘCAȘU
+        </p>
 
-        <Link href="/">ACASĂ ↑</Link>
+        <Link href="/">
+          ACASĂ ↑
+        </Link>
       </footer>
     </main>
   );

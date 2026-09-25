@@ -38,10 +38,7 @@ export default function Home() {
               atmosphere and visual stories.
             </p>
 
-            <Link
-              href="/#portfolio"
-              className="hero-link"
-            >
+            <Link href="/#portfolio" className="hero-link">
               <span>Vezi portofoliul</span>
               <span className="hero-arrow">↓</span>
             </Link>
@@ -112,10 +109,7 @@ export default function Home() {
                 <div className="portfolio-card-overlay" />
 
                 <span className="portfolio-card-number">
-                  {String(index + 1).padStart(
-                    2,
-                    "0"
-                  )}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <div className="portfolio-card-content">
@@ -155,26 +149,25 @@ export default function Home() {
 
           <div className="about-copy">
             <p className="about-lead">
-              Sunt Rareș Pușcașu, fotograf
-              pasionat de imagini care transmit
-              atmosferă, energie și emoție.
+              Sunt Rareș Pușcașu, fotograf pasionat
+              de imagini care transmit atmosferă,
+              energie și emoție.
             </p>
 
             <p>
-              Pasiunea mea pentru fotografie a
-              început din curiozitate și s-a
-              transformat treptat într-un mod de a
-              surprinde oameni, locuri și momente
-              care merită păstrate.
+              Pasiunea mea pentru fotografie a început
+              din curiozitate și s-a transformat
+              treptat într-un mod de a surprinde
+              oameni, locuri și momente care merită
+              păstrate.
             </p>
 
             <p>
               De la primele cadre realizate cu
-              telefonul până la evenimente,
-              fotografie automotive, portrete,
-              proiecte comerciale și fotografie
-              aeriană, fiecare experiență a
-              contribuit la stilul meu de astăzi.
+              telefonul până la evenimente, fotografie
+              automotive, portrete, proiecte comerciale
+              și fotografie aeriană, fiecare experiență
+              a contribuit la stilul meu de astăzi.
             </p>
 
             <Link
@@ -215,14 +208,14 @@ export default function Home() {
 
           <div className="contact-links">
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/rarees_photographer/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Instagram ↗
             </a>
 
-            <a href="mailto:contact@raresphotographer.com">
+            <a href="mailto:rares.photographer20@gmail.com">
               Email ↗
             </a>
           </div>
