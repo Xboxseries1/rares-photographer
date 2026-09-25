@@ -1,3 +1,4 @@
+import ArrowIcon from "@/components/ArrowIcon";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -40,7 +41,7 @@ export default function Home() {
 
             <Link href="/#portfolio" className="hero-link">
               <span>Vezi portofoliul</span>
-              <span className="hero-arrow">↓</span>
+              <span className="hero-arrow"><ArrowIcon direction="down" /></span>
             </Link>
           </div>
         </div>
@@ -104,7 +105,7 @@ export default function Home() {
                   width={category.coverWidth}
                   height={category.coverHeight}
                   className="portfolio-card-image"
-                  sizes="(max-width: 540px) 92vw, (max-width: 800px) 44vw, 29vw"
+                  sizes="(max-width: 800px) 44vw, (max-width: 1200px) 29vw, 348px"
                 />
                 <div className="portfolio-card-content">
                   <h3>{category.coverTitle}</h3>
@@ -165,7 +166,7 @@ export default function Home() {
               className="text-link"
             >
               Citește povestea mea
-              <span>↗</span>
+              <span><ArrowIcon direction="up-right" /></span>
             </Link>
           </div>
         </div>
@@ -202,11 +203,11 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram ↗
+              Instagram <ArrowIcon direction="up-right" />
             </a>
 
             <a href="mailto:rares.photographer20@gmail.com">
-              Email ↗
+              Email <ArrowIcon direction="up-right" />
             </a>
           </div>
         </div>
@@ -223,7 +224,7 @@ export default function Home() {
         </p>
 
         <a href="#">
-          Back to top ↑
+          Back to top <ArrowIcon direction="up" />
         </a>
       </footer>
     </main>

@@ -1,3 +1,4 @@
+import ArrowIcon from "@/components/ArrowIcon";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export default function AboutPage() {
         </Link>
 
         <Link href="/" className={styles.back}>
-          ← ACASĂ
+          <ArrowIcon direction="left" /> ACASĂ
         </Link>
       </header>
 
@@ -48,7 +49,7 @@ export default function AboutPage() {
             în timp, într-un mod de a observa, de a crea și de a păstra momente.
           </p>
 
-          <span>SCROLL ↓</span>
+          <span>SCROLL <ArrowIcon direction="down" /></span>
         </div>
       </section>
 
@@ -212,7 +213,7 @@ export default function AboutPage() {
 
         <Link href="/#portfolio">
           VEZI PORTOFOLIUL
-          <span>↗</span>
+          <span><ArrowIcon direction="up-right" /></span>
         </Link>
       </section>
 
@@ -227,7 +228,7 @@ export default function AboutPage() {
         </p>
 
         <Link href="/">
-          ACASĂ ↑
+          ACASĂ <ArrowIcon direction="up" />
         </Link>
       </footer>
     </main>

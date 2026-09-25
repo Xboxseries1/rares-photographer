@@ -1,5 +1,6 @@
 "use client";
 
+import ArrowIcon from "@/components/ArrowIcon";
 import { useEffect, useState } from "react";
 import type { PortfolioImage } from "@/lib/portfolio";
 import styles from "./PortfolioGallery.module.css";
@@ -94,7 +95,7 @@ export default function PortfolioGallery({
 
             <div className={styles.itemOverlay}>
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <span>VIEW ↗</span>
+              <span>VIEW <ArrowIcon direction="up-right" /></span>
             </div>
           </button>
         ))}
@@ -132,7 +133,7 @@ export default function PortfolioGallery({
             }}
             aria-label="Fotografia anterioară"
           >
-            ←
+            <ArrowIcon direction="left" />
           </button>
 
           <div
@@ -157,7 +158,7 @@ export default function PortfolioGallery({
             }}
             aria-label="Fotografia următoare"
           >
-            →
+            <ArrowIcon direction="right" />
           </button>
         </div>
       )}

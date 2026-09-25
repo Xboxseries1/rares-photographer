@@ -1,3 +1,4 @@
+import ArrowIcon from "@/components/ArrowIcon";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -99,7 +100,7 @@ export default async function PortfolioCategoryPage({
         </Link>
 
         <Link href="/#portfolio" className={styles.back}>
-          ← PORTOFOLIU
+          <ArrowIcon direction="left" /> PORTOFOLIU
         </Link>
       </header>
 
@@ -122,7 +123,7 @@ export default async function PortfolioCategoryPage({
         <div className={styles.heroBottom}>
           <p>{category.description}</p>
 
-          <span>SCROLL ↓</span>
+          <span>SCROLL <ArrowIcon direction="down" /></span>
         </div>
       </section>
 
@@ -143,7 +144,7 @@ export default async function PortfolioCategoryPage({
           className={styles.nextLink}
         >
           <span>{nextCategory.title}</span>
-          <strong>↗</strong>
+          <strong><ArrowIcon direction="up-right" /></strong>
         </Link>
       </section>
 
@@ -155,7 +156,7 @@ export default async function PortfolioCategoryPage({
 
         <p>© 2026 RAREȘ PUȘCAȘU</p>
 
-        <Link href="/">ACASĂ ↑</Link>
+        <Link href="/">ACASĂ <ArrowIcon direction="up" /></Link>
       </footer>
     </main>
   );

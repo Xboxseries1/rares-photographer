@@ -543,7 +543,10 @@ img {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 64px 4.2vw;
+  gap: 36px 28px;
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
   align-items: start;
 }
 
@@ -1165,6 +1168,12 @@ footer > a {
 }
 
 @media (max-width: 540px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+  .portfolio-card-content { padding: 10px 0 0; }
+  .portfolio-card-content h3 { font-size: 14px; line-height: 1.2; }
+  .portfolio-card-content p { margin-top: 7px; font-size: 10px; }
   .portfolio-section { padding-inline: 4vw; }
 }
