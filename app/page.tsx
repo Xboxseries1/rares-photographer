@@ -38,7 +38,10 @@ export default function Home() {
               atmosphere and visual stories.
             </p>
 
-            <Link href="#portfolio" className="hero-link">
+            <Link
+              href="/#portfolio"
+              className="hero-link"
+            >
               <span>Vezi portofoliul</span>
               <span className="hero-arrow">↓</span>
             </Link>
@@ -51,10 +54,14 @@ export default function Home() {
       </section>
 
       <section className="manifesto">
-        <div className="section-index">01</div>
+        <div className="section-index">
+          01
+        </div>
 
         <div className="manifesto-content">
-          <p className="eyebrow">Photography portfolio</p>
+          <p className="eyebrow">
+            Photography portfolio
+          </p>
 
           <h2>
             Imagini care păstrează
@@ -63,60 +70,81 @@ export default function Home() {
           </h2>
 
           <p className="manifesto-text">
-            Fotografie de eveniment, automotive, portret, comercială,
-            fotografie aeriană și street photography.
+            Fotografie de eveniment, automotive,
+            portret, comercială, fotografie aeriană
+            și street photography.
           </p>
         </div>
       </section>
 
-      <section className="portfolio-section" id="portfolio">
-  <div className="portfolio-heading">
-    <div>
-      <p className="eyebrow">Selected Work</p>
-      <h2>Portofoliu</h2>
-    </div>
-
-    <span>06 categorii</span>
-  </div>
-
-  <div className="portfolio-grid">
-    {portfolioCategories.map((category, index) => (
-      <Link
-        href={`/portfolio/${category.slug}`}
-        className="portfolio-card"
-        key={category.slug}
+      <section
+        className="portfolio-section"
+        id="portfolio"
       >
-        <Image
-          src={category.cover}
-          alt={category.title}
-          fill
-          className="portfolio-card-image"
-          sizes="(max-width: 800px) 50vw, 33vw"
-        />
+        <div className="portfolio-heading">
+          <div>
+            <p className="eyebrow">
+              Selected Work
+            </p>
 
-        <div className="portfolio-card-overlay" />
+            <h2>Portofoliu</h2>
+          </div>
 
-        <span className="portfolio-card-number">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-
-        <div className="portfolio-card-content">
-          <p>{category.subtitle}</p>
-          <h3>{category.title}</h3>
+          <span>06 categorii</span>
         </div>
 
-        <span className="portfolio-card-arrow">↗</span>
-      </Link>
-    ))}
-  </div>
-</section>
+        <div className="portfolio-grid">
+          {portfolioCategories.map(
+            (category, index) => (
+              <Link
+                href={`/portfolio/${category.slug}`}
+                className="portfolio-card"
+                key={category.slug}
+              >
+                <Image
+                  src={category.cover}
+                  alt={category.title}
+                  fill
+                  className="portfolio-card-image"
+                  sizes="(max-width: 800px) 50vw, 33vw"
+                />
 
-      <section className="about-section" id="about">
-        <div className="section-index">02</div>
+                <div className="portfolio-card-overlay" />
+
+                <span className="portfolio-card-number">
+                  {String(index + 1).padStart(
+                    2,
+                    "0"
+                  )}
+                </span>
+
+                <div className="portfolio-card-content">
+                  <p>{category.subtitle}</p>
+                  <h3>{category.title}</h3>
+                </div>
+
+                <span className="portfolio-card-arrow">
+                  ↗
+                </span>
+              </Link>
+            )
+          )}
+        </div>
+      </section>
+
+      <section
+        className="about-section"
+        id="about"
+      >
+        <div className="section-index">
+          02
+        </div>
 
         <div className="about-grid">
           <div className="about-title">
-            <p className="eyebrow">Despre mine</p>
+            <p className="eyebrow">
+              Despre mine
+            </p>
 
             <h2>
               Behind
@@ -127,32 +155,48 @@ export default function Home() {
 
           <div className="about-copy">
             <p className="about-lead">
-              Sunt Rareș Pușcașu, fotograf pasionat de imagini care transmit
+              Sunt Rareș Pușcașu, fotograf
+              pasionat de imagini care transmit
               atmosferă, energie și emoție.
             </p>
 
             <p>
-              Fotografiez evenimente, automobile, portrete, produse și
-              perspective aeriene. Îmi place să păstrez cadrele naturale și să
-              construiesc o imagine modernă, curată și cinematică.
+              Pasiunea mea pentru fotografie a
+              început din curiozitate și s-a
+              transformat treptat într-un mod de a
+              surprinde oameni, locuri și momente
+              care merită păstrate.
             </p>
 
             <p>
-              Sunt disponibil pentru proiecte în Ploiești, Prahova, București
-              și pentru deplasări.
+              De la primele cadre realizate cu
+              telefonul până la evenimente,
+              fotografie automotive, portrete,
+              proiecte comerciale și fotografie
+              aeriană, fiecare experiență a
+              contribuit la stilul meu de astăzi.
             </p>
 
-            <Link href="#contact" className="text-link">
-              Lucrează cu mine
+            <Link
+              href="/despre-mine"
+              className="text-link"
+            >
+              Citește povestea mea
               <span>↗</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="contact-section" id="contact">
+      <section
+        className="contact-section"
+        id="contact"
+      >
         <div className="contact-top">
-          <p className="eyebrow">Contact</p>
+          <p className="eyebrow">
+            Contact
+          </p>
+
           <span>03</span>
         </div>
 
@@ -191,9 +235,13 @@ export default function Home() {
           <span>PHOTOGRAPHER</span>
         </div>
 
-        <p>© 2026 Rareș Pușcașu</p>
+        <p>
+          © 2026 Rareș Pușcașu
+        </p>
 
-        <a href="#">Back to top ↑</a>
+        <a href="#">
+          Back to top ↑
+        </a>
       </footer>
     </main>
   );

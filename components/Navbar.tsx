@@ -13,9 +13,12 @@ export default function Navbar() {
     };
 
     handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -28,22 +31,38 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
-        <Link href="/" className="brand" onClick={() => setOpen(false)}>
+      <header
+        className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
+      >
+        <Link
+          href="/"
+          className="brand"
+          onClick={() => setOpen(false)}
+        >
           <span className="brand-name">RAREȘ</span>
           <span className="brand-role">PHOTOGRAPHER</span>
         </Link>
 
         <nav className="desktop-nav">
-          <Link href="/#portfolio">Portofoliu</Link>
-          <Link href="/#about">Despre mine</Link>
-          <Link href="/#contact">Contact</Link>
+          <Link href="/#portfolio">
+            Portofoliu
+          </Link>
+
+          <Link href="/despre-mine">
+            Despre mine
+          </Link>
+
+          <Link href="/#contact">
+            Contact
+          </Link>
         </nav>
 
         <button
           type="button"
-          className={`menu-button ${open ? "menu-button-open" : ""}`}
-          aria-label="Meniu"
+          className={`menu-button ${
+            open ? "menu-button-open" : ""
+          }`}
+          aria-label="Deschide meniul"
           onClick={() => setOpen((current) => !current)}
         >
           <span />
@@ -51,28 +70,44 @@ export default function Navbar() {
         </button>
       </header>
 
-      <div className={`mobile-menu ${open ? "mobile-menu-open" : ""}`}>
+      <div
+        className={`mobile-menu ${
+          open ? "mobile-menu-open" : ""
+        }`}
+      >
         <nav>
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+          >
             Acasă
           </Link>
 
-          <Link href="/#portfolio" onClick={() => setOpen(false)}>
+          <Link
+            href="/#portfolio"
+            onClick={() => setOpen(false)}
+          >
             Portofoliu
           </Link>
 
-          <Link href="/#about" onClick={() => setOpen(false)}>
+          <Link
+            href="/despre-mine"
+            onClick={() => setOpen(false)}
+          >
             Despre mine
           </Link>
 
-          <Link href="/#contact" onClick={() => setOpen(false)}>
+          <Link
+            href="/#contact"
+            onClick={() => setOpen(false)}
+          >
             Contact
           </Link>
         </nav>
 
         <div className="mobile-menu-meta">
           <span>Rareș Pușcașu</span>
-          <span>Ploiești, România</span>
+          <span>Photographer</span>
         </div>
       </div>
     </>
