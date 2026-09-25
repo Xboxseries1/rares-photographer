@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { PortfolioImage } from "@/lib/portfolio";
 import styles from "./PortfolioGallery.module.css";
 
 type PortfolioGalleryProps = {
-  images: string[];
+  images: PortfolioImage[];
   title: string;
 };
 
@@ -75,14 +76,17 @@ export default function PortfolioGallery({
       <div className={styles.gallery}>
         {images.map((image, index) => (
           <button
-            key={image}
+            key={image.src}
             type="button"
             className={styles.item}
             onClick={() => setActiveIndex(index)}
             aria-label={`Deschide fotografia ${index + 1}`}
           >
             <img
-              src={image}
+              src={image.thumbnail}
+              width={image.width}
+              height={image.height}
+              decoding="async"
               alt={`${title} — fotografia ${index + 1}`}
               className={styles.image}
               loading={index < 6 ? "eager" : "lazy"}
@@ -136,7 +140,9 @@ export default function PortfolioGallery({
             onClick={(event) => event.stopPropagation()}
           >
             <img
-              src={images[activeIndex]}
+              src={images[activeIndex].src}
+              width={images[activeIndex].width}
+              height={images[activeIndex].height}
               alt={`${title} — fotografia ${activeIndex + 1}`}
               className={styles.lightboxImage}
             />
