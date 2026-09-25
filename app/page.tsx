@@ -1,69 +1,200 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import Navbar from "@/components/Navbar";
+import { portfolioCategories } from "@/data/portfolio";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main>
+      <Navbar />
+
+      <section className="hero">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/portfolio/drone/DJI_0429.jpg"
+          alt="Rareș Pușcașu Photographer"
+          fill
           priority
+          className="hero-image"
+          sizes="100vw"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+
+        <div className="hero-darken" />
+
+        <div className="hero-content">
+          <p className="hero-location">
+            Photographer · Ploiești · România
+          </p>
+
+          <h1>
+            <span>RAREȘ</span>
+            <span>PUȘCAȘU</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <div className="hero-footer">
+            <p>
+              People, moments,
+              <br />
+              atmosphere and visual stories.
+            </p>
+
+            <Link href="#portfolio" className="hero-link">
+              <span>Vezi portofoliul</span>
+              <span className="hero-arrow">↓</span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="hero-side-text">
+          PHOTOGRAPHER / 2026
+        </div>
+      </section>
+
+      <section className="manifesto">
+        <div className="section-index">01</div>
+
+        <div className="manifesto-content">
+          <p className="eyebrow">Photography portfolio</p>
+
+          <h2>
+            Imagini care păstrează
+            <br />
+            <em>momentul.</em>
+          </h2>
+
+          <p className="manifesto-text">
+            Fotografie de eveniment, automotive, portret, comercială,
+            fotografie aeriană și street photography.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
+
+      <section className="portfolio-section" id="portfolio">
+  <div className="portfolio-heading">
+    <div>
+      <p className="eyebrow">Selected Work</p>
+      <h2>Portofoliu</h2>
     </div>
+
+    <span>06 categorii</span>
+  </div>
+
+  <div className="portfolio-grid">
+    {portfolioCategories.map((category, index) => (
+      <Link
+        href={`/portfolio/${category.slug}`}
+        className="portfolio-card"
+        key={category.slug}
+      >
+        <Image
+          src={category.cover}
+          alt={category.title}
+          fill
+          className="portfolio-card-image"
+          sizes="(max-width: 800px) 50vw, 33vw"
+        />
+
+        <div className="portfolio-card-overlay" />
+
+        <span className="portfolio-card-number">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <div className="portfolio-card-content">
+          <p>{category.subtitle}</p>
+          <h3>{category.title}</h3>
+        </div>
+
+        <span className="portfolio-card-arrow">↗</span>
+      </Link>
+    ))}
+  </div>
+</section>
+
+      <section className="about-section" id="about">
+        <div className="section-index">02</div>
+
+        <div className="about-grid">
+          <div className="about-title">
+            <p className="eyebrow">Despre mine</p>
+
+            <h2>
+              Behind
+              <br />
+              the camera.
+            </h2>
+          </div>
+
+          <div className="about-copy">
+            <p className="about-lead">
+              Sunt Rareș Pușcașu, fotograf pasionat de imagini care transmit
+              atmosferă, energie și emoție.
+            </p>
+
+            <p>
+              Fotografiez evenimente, automobile, portrete, produse și
+              perspective aeriene. Îmi place să păstrez cadrele naturale și să
+              construiesc o imagine modernă, curată și cinematică.
+            </p>
+
+            <p>
+              Sunt disponibil pentru proiecte în Ploiești, Prahova, București
+              și pentru deplasări.
+            </p>
+
+            <Link href="#contact" className="text-link">
+              Lucrează cu mine
+              <span>↗</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-section" id="contact">
+        <div className="contact-top">
+          <p className="eyebrow">Contact</p>
+          <span>03</span>
+        </div>
+
+        <h2>
+          Ai un proiect
+          <br />
+          <em>în minte?</em>
+        </h2>
+
+        <div className="contact-bottom">
+          <p>
+            Pentru evenimente, ședințe foto,
+            <br />
+            colaborări și proiecte comerciale.
+          </p>
+
+          <div className="contact-links">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram ↗
+            </a>
+
+            <a href="mailto:contact@raresphotographer.com">
+              Email ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <strong>RAREȘ</strong>
+          <span>PHOTOGRAPHER</span>
+        </div>
+
+        <p>© 2026 Rareș Pușcașu</p>
+
+        <a href="#">Back to top ↑</a>
+      </footer>
+    </main>
   );
 }
