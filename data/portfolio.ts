@@ -5,6 +5,10 @@ export type PortfolioCategory = {
   subtitle: string;
   description: string;
   cover: string;
+  coverWidth: number;
+  coverHeight: number;
+  coverTitle: string;
+  year: string;
 };
 
 export const portfolioCategories: PortfolioCategory[] = [
@@ -15,7 +19,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Event Photography",
     description:
       "Momente autentice, emoții și povești surprinse natural, de la evenimente private la ocazii speciale.",
-    cover: "/portfolio/event/Majorat%20Claudia%20Foto-344.jpg",
+    cover: "/album-covers/event.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Fotografie de Eveniment / Event Photography",
+    year: "2026",
   },
   {
     slug: "drone-photography",
@@ -24,7 +32,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Drone Photography",
     description:
       "Perspective aeriene și cadre cinematice care transformă locurile în povești vizuale.",
-    cover: "/portfolio/drone/DJI_0429.jpg",
+    cover: "/album-covers/drone.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Fotografie din Drona / Drone Photography",
+    year: "2026",
   },
   {
     slug: "car-photography",
@@ -33,7 +45,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Automotive",
     description:
       "Automobile fotografiate cu accent pe design, lumină, detalii și personalitate.",
-    cover: "/portfolio/automotive/olx-17.jpg",
+    cover: "/album-covers/automotive.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Car Photography",
+    year: "2024",
   },
   {
     slug: "commercial-photography",
@@ -42,7 +58,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Commercial Photography",
     description:
       "Conținut vizual pentru produse, branduri și proiecte care au nevoie de o imagine puternică.",
-    cover: "/portfolio/commercial/comerciala-13.jpg",
+    cover: "/album-covers/commercial.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Fotografie Comerciala/Comercial Photography",
+    year: "2024",
   },
   {
     slug: "portrait-photography",
@@ -51,7 +71,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Portrait Photography",
     description:
       "Portrete naturale și expresive construite în jurul persoanei, luminii și atmosferei.",
-    cover: "/portfolio/portrait/DSC_9168.jpg",
+    cover: "/album-covers/portrait.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Fotografie Portret/Portret Photography",
+    year: "2024",
   },
   {
     slug: "street-photography",
@@ -60,7 +84,11 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: "Street Photography",
     description:
       "Momente spontane, arhitectură și povești descoperite în ritmul orașului.",
-    cover: "/portfolio/street/viena%20final%20-19.jpg",
+    cover: "/album-covers/street.jpg",
+    coverWidth: 1280,
+    coverHeight: 1001,
+    coverTitle: "Fotografie Stradala/Street Photography",
+    year: "2024",
   },
 ];
 

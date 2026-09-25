@@ -92,7 +92,7 @@ export default function Home() {
 
         <div className="portfolio-grid">
           {portfolioCategories.map(
-            (category, index) => (
+            (category) => (
               <Link
                 href={`/portfolio/${category.slug}`}
                 className="portfolio-card"
@@ -101,25 +101,15 @@ export default function Home() {
                 <Image
                   src={category.cover}
                   alt={category.title}
-                  fill
+                  width={category.coverWidth}
+                  height={category.coverHeight}
                   className="portfolio-card-image"
-                  sizes="(max-width: 800px) 50vw, 33vw"
+                  sizes="(max-width: 540px) 92vw, (max-width: 800px) 44vw, 29vw"
                 />
-
-                <div className="portfolio-card-overlay" />
-
-                <span className="portfolio-card-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
                 <div className="portfolio-card-content">
-                  <p>{category.subtitle}</p>
-                  <h3>{category.title}</h3>
+                  <h3>{category.coverTitle}</h3>
+                  <p>{category.year}</p>
                 </div>
-
-                <span className="portfolio-card-arrow">
-                  ↗
-                </span>
               </Link>
             )
           )}
